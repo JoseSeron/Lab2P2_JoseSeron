@@ -1,8 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package lab2p2_joseseron;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -10,12 +9,15 @@ package lab2p2_joseseron;
  */
 public class Lab2P2_JoseSeron {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("lab 2");
+        
+        ArrayList recursos = new ArrayList();
+        ArrayList <usuarios> listaUsuarios = new ArrayList();
+        
+        
     }
     
 }

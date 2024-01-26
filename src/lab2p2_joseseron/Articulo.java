@@ -10,4 +10,6 @@ package lab2p2_joseseron;
  */
 public class Articulo {
     
+    
+    
 }
