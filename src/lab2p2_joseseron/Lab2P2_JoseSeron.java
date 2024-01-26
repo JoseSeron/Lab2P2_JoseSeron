@@ -73,8 +73,8 @@ public class Lab2P2_JoseSeron {
                         break;
                     } else {
                         System.out.println("-----------Inventario-----------");
-                        for (Object recurso : recursos) {
-                            System.out.println(recurso+".-" + recursos.indexOf(recurso));
+                        for (Object ite : recursos) {
+                            System.out.println(recursos.indexOf(ite)+"-"+ite);
                         }
 
                     }
