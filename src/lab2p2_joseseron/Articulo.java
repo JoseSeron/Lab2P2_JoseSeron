@@ -6,18 +6,14 @@ package lab2p2_joseseron;
  */
 public class Articulo {
 
-    String titulo, autor, tema, fechaPublicacion;
-    boolean accesoEnLinea;
+    String titulo, autor, tema, fechaPublicacion, accesoEnLinea;
 
-    //contructores
-    public Articulo(String titulo, String autor, String tema, String fechaPublicacion, boolean accesoEnLinea) {
+    public Articulo(String titulo, String autor, String tema, String fechaPublicacion, String accesoEnLinea) {
         this.titulo = titulo;
         this.autor = autor;
         this.tema = tema;
         this.fechaPublicacion = fechaPublicacion;
         this.accesoEnLinea = accesoEnLinea;
-
-        //mutadores
     }
 
     public String getTitulo() {
@@ -52,16 +48,14 @@ public class Articulo {
         this.fechaPublicacion = fechaPublicacion;
     }
 
-    public boolean isAccesoEnLinea() {
+    public String getAccesoEnLinea() {
         return accesoEnLinea;
     }
 
-    public void setAccesoEnLinea(boolean accesoEnLinea) {
+    public void setAccesoEnLinea(String accesoEnLinea) {
         this.accesoEnLinea = accesoEnLinea;
-
     }
 
-    //ma
     @Override
     public String toString() {
         return "Articulo{" + "titulo=" + titulo + ", autor=" + autor + ", tema=" + tema + ", fechaPublicacion=" + fechaPublicacion + ", accesoEnLinea=" + accesoEnLinea + '}';

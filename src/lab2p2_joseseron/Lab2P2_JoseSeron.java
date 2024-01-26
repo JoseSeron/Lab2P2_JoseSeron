@@ -69,7 +69,6 @@ public class Lab2P2_JoseSeron {
             switch (opcionPrincipal) {
                 case 1: // listar
 
-                    break;
                 case 2: // crear
 
                     break;

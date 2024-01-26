@@ -13,12 +13,12 @@ public class Libro {
     String autor;
     String genero;
     String yearPublicacion;
-    boolean disponibilidad;
+    String disponibilidad;
     
     
     //constructores
 
-    public Libro(String titulo, String autor, String genero, String yearPublicacion, boolean disponibilidad) {
+    public Libro(String titulo, String autor, String genero, String yearPublicacion,String disponibilidad) {
         this.titulo = titulo;
         this.autor = autor;
         this.genero = genero;
@@ -59,13 +59,15 @@ public class Libro {
         this.yearPublicacion = yearPublicacion;
     }
 
-    public boolean isDisponibilidad() {
+    public String getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(boolean disponibilidad) {
+    public void setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
+
+
     
     //ma\
 
@@ -73,5 +75,7 @@ public class Libro {
     public String toString() {
         return "Libro{" + "titulo=" + titulo + ", autor=" + autor + ", genero=" + genero + ", yearPublicacion=" + yearPublicacion + ", disponibilidad=" + disponibilidad + '}';
     }
+
+
     
 }
