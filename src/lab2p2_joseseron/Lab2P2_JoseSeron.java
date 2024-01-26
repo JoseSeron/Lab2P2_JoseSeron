@@ -18,14 +18,44 @@ public class Lab2P2_JoseSeron {
         ArrayList<usuarios> listaUsuarios = new ArrayList();
 
         int menuPrincipal = 1;
-        
+
         //usuarios enduro
-        Usuario profesor = new Usuario("OsmanMejia", "osmanm504" , "profesor");
+        //3 usuarios, un profesor un bibliotecario y un profesor
+        Usuario profesor = new Usuario("OsmanMejia", "osmanm504", "profesor");
+        Usuario estudiante = new Usuario("JoseSeron", "seron2004", "estudiante");
+        Usuario bibliotecario = new Usuario("AllanBecker", "yeayeafusho", "bibliotecario");
+
+        boolean sesionIniciada = false;
 
         System.out.println("-------Inicio de Sesion-------");
-        System.out.print("Ingrese Nombre de Usuario: ");
+        String usuarioIngresado, contraIngresada, contraVerificacion = null;
+
+        do {
+            System.out.println("Ingrese Nombre de Usuario:\n"
+                    + "Profesor: " + profesor.getNombreUsuario()
+                    + "\nEstudiante: " + estudiante.getNombreUsuario()
+                    + "\nBibliotecario: " + bibliotecario.getNombreUsuario());
+            usuarioIngresado = strInput.nextLine();
+
+        } while (((usuarioIngresado.equals(profesor.getNombreUsuario())) == false) && ((usuarioIngresado.equals(estudiante.getNombreUsuario())) == false) && ((usuarioIngresado.equals(bibliotecario.getNombreUsuario())) == false));
         
-        
+        if (usuarioIngresado.equals(profesor.getNombreUsuario())) {
+            contraVerificacion = profesor.getContra();
+        } else if (usuarioIngresado.equals(estudiante.getNombreUsuario())) {
+            contraVerificacion = estudiante.getContra();
+        } else if (usuarioIngresado.equals(bibliotecario.getNombreUsuario())) {
+            contraVerificacion = bibliotecario.getContra();
+        }
+
+        do {
+            System.out.println("Ingrese Contrasena:\n"
+                    + "Profesor: " + profesor.getContra()
+                    + "\nEstudiante: " + estudiante.getContra()
+                    + "\nBibliotecario: " + bibliotecario.getContra());
+            contraIngresada = strInput.nextLine();
+
+        } while (contraIngresada.equals(contraVerificacion)==false);
+
         while (menuPrincipal != 0) {
             System.out.println("Menu Principal\n\n"
                     + "1-Listar Recursos\n"
@@ -35,12 +65,6 @@ public class Lab2P2_JoseSeron {
                     + "5-Salir");
 
             int opcionPrincipal = intInput.nextInt();
-            
-            
-            //3 usuarios, un profesor un bibliotecario y un profesor
-            
-            //Profesor
-            
 
             switch (opcionPrincipal) {
                 case 1: // listar
@@ -60,7 +84,7 @@ public class Lab2P2_JoseSeron {
                     menuPrincipal = 0;
                     break;
                 default:
-        
+
                     throw new AssertionError();
             }
         } //while menu principal
