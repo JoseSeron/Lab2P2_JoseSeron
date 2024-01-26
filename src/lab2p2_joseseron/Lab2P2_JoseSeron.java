@@ -38,7 +38,7 @@ public class Lab2P2_JoseSeron {
             usuarioIngresado = strInput.nextLine();
 
         } while (((usuarioIngresado.equals(profesor.getNombreUsuario())) == false) && ((usuarioIngresado.equals(estudiante.getNombreUsuario())) == false) && ((usuarioIngresado.equals(bibliotecario.getNombreUsuario())) == false));
-        
+
         if (usuarioIngresado.equals(profesor.getNombreUsuario())) {
             contraVerificacion = profesor.getContra();
         } else if (usuarioIngresado.equals(estudiante.getNombreUsuario())) {
@@ -54,7 +54,7 @@ public class Lab2P2_JoseSeron {
                     + "\nBibliotecario: " + bibliotecario.getContra());
             contraIngresada = strInput.nextLine();
 
-        } while (contraIngresada.equals(contraVerificacion)==false);
+        } while (contraIngresada.equals(contraVerificacion) == false);
 
         while (menuPrincipal != 0) {
             System.out.println("Menu Principal\n\n"
@@ -68,15 +68,81 @@ public class Lab2P2_JoseSeron {
 
             switch (opcionPrincipal) {
                 case 1: // listar
+                    if (recursos.isEmpty()) {
+                        System.out.println("No hay recursos en el inventario");
+                        break;
+                    } else {
+                        System.out.println("-----------Inventario-----------");
+                        for (Object recurso : recursos) {
+                            System.out.println(recurso+".-" + recursos.indexOf(recurso));
+                        }
 
+                    }
+                    break;
                 case 2: // crear
+                    if (usuarioIngresado.equals(estudiante.getNombreUsuario())) {
+                        System.out.println("Estuadiantes no pueden crear recursos.\n");
+                        break;
+                    } else {
+                        System.out.println("Que tipo de recurso desea ingresar?\n"
+                                + "1. Libro"
+                                + "2. Articulo"
+                                + "3. Curso en Linea"
+                                + "4. Conferencia");
+                        int tipoRecurso = intInput.nextInt();
 
+                        switch (tipoRecurso) {
+                            case 1: // libro
+                                System.out.println("-----Ingresar Libro------");
+                                System.out.println("Ingrese el titulo del libro: ");
+                                String titulo = strInput.nextLine();
+                                System.out.println("Ingrese el autor del libro: ");
+                                String autor = strInput.nextLine();
+                                System.out.println("Ingrese el genero del libro: ");
+                                String genero = strInput.nextLine();
+                                System.out.println("Ingrese el año de publicacion del libro: ");
+                                String year = strInput.nextLine();
+                                System.out.println("Ingrese la disponibilidad del libro: ");
+                                String disponibilidad = strInput.nextLine();
+                                
+                                Libro nuevoLibro = new Libro(titulo, autor, genero, contraVerificacion, disponibilidad);
+                                recursos.add(nuevoLibro);
+                            
+   
+                                break;
+                            case 2:
+
+                                break;
+                            case 3:
+
+                                break;
+                            case 4:
+
+                                break;
+                            default:
+                                throw new AssertionError();
+                        }
+                    }
                     break;
                 case 3: //eliminar
+                    if (usuarioIngresado.equals(estudiante.getNombreUsuario())) {
+                        System.out.println("Estuadiantes no pueden eliminar recursos.\n");
+                        break;
+                    } else {
 
+                    }
                     break;
                 case 4: //modificar
+                    if (usuarioIngresado.equals(estudiante.getNombreUsuario())) {
+                        System.out.println("Estuadiantes no pueden modificar recursos.\n");
+                        break;
+                    } else if (usuarioIngresado.equals(profesor.getNombreUsuario())) {
+                        System.out.println("Profesores no pueden modificar recursos.\n");
+                        break;
+                    }
+                     {
 
+                    }
                     break;
                 case 5: //salir
                     System.out.println("Saliendo del programa...");
